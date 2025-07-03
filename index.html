@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slime Surplus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="topbar">
+    <div class="nav-container">
+      <a>Home</a>
+      <a href="controls.html">Controls</a>
+      <a href="download.html">Download</a>
+    </div>
+  </nav>
+  <header class="hero" id="home">
+    <img src="images/hero.png" alt="Slime Surplus Banner" class="hero-img" />
+    <h1>Slime Surplus</h1>
+    <p class="subtitle">A game by chocobox!</p>
+    <a href="download.html" class="button">Play Now</a>
+  </header>
+  <main>
+    <!-- <section class="about" id="about">
+      <h2>About the Game</h2>
+      <p>
+        Slime Surplus is a
+      </p>
+    </section> -->
+  </main>
+  <footer class="footer">
+    <p>Contact me on Discord: <strong>choco_box43</strong></p>
+  </footer>
+  <script>
+    document.body.classList.add('fade-in');
+    document.querySelectorAll('a[href]').forEach(link => {
+        const url = link.getAttribute('href');
+        if (url && !url.startsWith('#') && !url.startsWith('http')) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.body.classList.remove('fade-in');
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+            window.location.href = url;
+            }, 400);
+        });
+        }
+    });
+  </script>
+</body>
+</html>

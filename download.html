@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controls | Slime Surplus</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+
+  <nav class="topbar">
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="controls.html">Controls</a>
+      <a>Download</a>
+    </div>
+  </nav>
+
+  <section class="controls" id="controls">
+    <section class="gallery" id="gallery">
+      <p>Only available on PC. Click below to download!</p>
+      <div class="screenshots">
+        <img src="images/screenshot1.png" alt="Screenshot 1" />
+        <img src="images/screenshot2.png" alt="Screenshot 2" />
+        <img src="images/screenshot3.png" alt="Screenshot 3" />
+      </div>
+      <p></p>
+      <a class="button" id="download-btn" href="#download" download>Download [Portable]</a>
+    </section>
+
+    <script>
+      document.getElementById('download-btn').addEventListener('click', function () {
+          const link = document.createElement('a');
+          link.href = 'game/Slime_Surplus.zip';
+          link.download = 'Slime_Surplus.zip';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+      });
+    </script>
+  </section>
+  <script>
+    document.body.classList.add('fade-in');
+    document.querySelectorAll('a[href]').forEach(link => {
+        const url = link.getAttribute('href');
+        if (url && !url.startsWith('#') && !url.startsWith('http')) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.body.classList.remove('fade-in');
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+            window.location.href = url;
+            }, 400); 
+        });
+        }
+    });
+  </script>
+</body>
+</html>

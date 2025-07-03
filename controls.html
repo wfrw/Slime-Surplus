@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download | Slime Surplus</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+
+  <nav class="topbar">
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <a>Controls</a>
+      <a href="download.html">Download</a>
+    </div>
+  </nav>
+
+  <section class="controls" id="controls">
+    <h1>Game Controls</h1>
+    <p>
+      Master the game with these simple controls!
+    </p>
+
+    <ul class="controls-list">
+      <br>
+      <li><strong>W</strong> - Jump</li>
+      <li><strong>A</strong> - Move Left</li>
+      <li><strong>D</strong> - Move Right</li>
+      <li><strong>Spacebar</strong> - Jump</li>
+      <br>
+      <li><strong>1</strong> - Equip first slot weapon</li>
+      <li><strong>0</strong> - Enequip current weapon</li>
+      <br>
+      <li><strong>E</strong> - Interact</li>
+      <li><strong>Esc</strong> - Pause Menu</li>
+    </ul>
+  </section>
+  <script>
+    document.body.classList.add('fade-in');
+    document.querySelectorAll('a[href]').forEach(link => {
+        const url = link.getAttribute('href');
+        if (url && !url.startsWith('#') && !url.startsWith('http')) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.body.classList.remove('fade-in');
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+            window.location.href = url;
+            }, 400); 
+        });
+        }
+    });
+  </script>
+</body>
+</html>
